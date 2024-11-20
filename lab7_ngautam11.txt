@@ -1,0 +1,10 @@
+OPS445 Lab Report - System Information for running ./CheckLab7.py
+=================================================================
+    User login name: ngautam11
+    Linux system name: ngautam11-VirtualBox
+    Python executable: /usr/bin/python3
+    Python version: 3123
+    OS Platform: linux
+    Working Directory: /home/ngautam11/ops445/lab7
+    Start at: Wed Nov 20 12:55:19 2024
+=================================================================

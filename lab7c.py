@@ -16,11 +16,11 @@ def sum_times(t1, t2):
     sum.minute = t1.minute + t2.minute
     sum.second = t1.second + t2.second
 
-    if sum.second >= 60:
+    while sum.second >= 60:
         sum.second -= 60
         sum.minute += 1
 
-    if sum.minute >= 60:
+    while sum.minute >= 60:
         sum.minute -= 60
         sum.hour += 1
 
@@ -32,3 +32,30 @@ def valid_time(t):
     if t.minute >= 60 or t.second >= 60 or t.hour >= 24:
         return False
     return True
+
+def change_time(time, seconds):
+    time.second += seconds
+    while time.second >= 60:
+        time.second -= 60
+        time.minute += 1
+    while time.second < 0:
+        time.second += 60
+        time.minute -= 1
+    while time.minute >= 60:
+        time.minute -= 60
+        time.hour += 1
+    while time.minute < 0:
+        time.minute += 60
+        time.hour -= 1
+    return None
+
+def time_to_sec(time):
+    minutes = time.hour * 60 + time.minute
+    seconds = minutes * 60 + time.second
+    return seconds
+
+def sec_to_time(seconds):
+    time = Time()
+    minutes, time.second = divmod(seconds, 60)
+    time.hour, time.minute = divmod(minutes, 60)
+    return time

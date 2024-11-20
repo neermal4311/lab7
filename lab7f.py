@@ -44,9 +44,17 @@ class Time:
             return False
         return True
 
+    def __str__(self):
+        return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
+
+    def __repr__(self):
+        return f'{self.hour:02d}.{self.minute:02d}.{self.second:02d}'
+
+    def __add__(self, t2):
+        return self.sum_times(t2)
+
 def sec_to_time(seconds):
     time = Time()
     minutes, time.second = divmod(seconds, 60)
     time.hour, time.minute = divmod(minutes, 60)
     return time
-
